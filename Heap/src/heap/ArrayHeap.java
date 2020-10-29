@@ -37,8 +37,8 @@ public class ArrayHeap<T extends Comparable<T>> implements Heap<T> {
             return;
         }
 
-        int leftIdx = idx * 2 + 1 >= size ? idx : idx * 2 + 1;
-        int rightIdx = idx * 2 + 2 >= size ? idx : idx * 2 + 2;
+        int leftIdx = (idx << 1) + 1 >= size ? idx : (idx << 1) + 1;
+        int rightIdx = (idx << 1) + 2 >= size ? idx : (idx << 1) + 2;
 
         int maxIdx = get(idx).compareTo(get(leftIdx)) >= 0 ? idx : leftIdx;
         maxIdx = get(maxIdx).compareTo(get(rightIdx)) >= 0 ? maxIdx : rightIdx;
